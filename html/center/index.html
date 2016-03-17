@@ -1,0 +1,41 @@
+<!--中间页主页面-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <!--aui样式-->
+        <link rel="stylesheet" type="text/css" href="../../css/aui/aui.css" />
+        <!--页面自定义样式--> 
+        <link rel="stylesheet" type="text/css" href="../../css/app/center.css" /> 
+        
+    </head>
+    <body>
+        <div class="aui-card aui-noborder service-list">
+            <ul class="aui-list-view" id="serviceList">
+                <!--v-for 通过vuejs的数据绑定遍历列表数据-->                
+                <li class="aui-list-view-cell aui-img" v-for="dt in services">
+                    <img class="aui-img-object aui-pull-right" src="http://placehold.it/90x90">
+                    <div class="aui-img-body">
+                         <p class='aui-ellipsis-2'>
+                            {{dt.text}}
+                        </p>
+                    </div>
+                </li>
+                <li class="aui-list-view-cell  aui-img">
+                    <!--v-on:click 绑定click事件，触发vue的refresh方法加载远程数据-->
+                    <div class="aui-img-body" v-on:click="refresh">
+                         <p class='aui-ellipsis-2 aui-text-center'>
+                                                                                点击加载更多
+                          <i class="fa fa-angle-double-down"></i>                                                          
+                         </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <!-- 引入requirejs -->    
+    <script data-main="../../script/" src="../../script/lib/requirejs/require.js"></script>
+    <!-- 页面自定义js -->    
+    <script src="../../script/app/center/center.js"></script>
+</html>

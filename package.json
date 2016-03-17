@@ -1,0 +1,32 @@
+{
+  "name": "ecitywy",
+  "version": "1.0.0",
+  "description": "ecitywy project",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "imagemin-pngquant": "^4.2.0"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.5.0",
+    "gulp": "^3.9.0",
+    "gulp-cache": "^0.4.1",
+    "gulp-imagemin": "^2.4.0",
+    "js-sha1": "^0.3.0",
+    "requirejs": "^2.1.22",
+    "vue": "^1.0.17",
+    "vue-resource": "^0.7.0",
+    "zepto": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@172.31.122.124:10022/wuf/Ecity.git"
+  },
+  "keywords": [
+    "ecitywy"
+  ],
+  "author": "Frank.W",
+  "license": "MIT"
+}
