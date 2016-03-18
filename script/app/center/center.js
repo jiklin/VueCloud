@@ -31,7 +31,14 @@ require(['../../script/app.js'], function() {
 					// GET request
 					var url = "http://192.168.191.1:8080/home/guess"
 					this.$http.get(url).then(function(response) {
-						this.$set('services', response.data.data)
+						var data = this.$get('services');
+						//先判断是否存在数据 存在则进行追加
+						//这里采用的模拟数据，如果实际用应该
+						//获取已知数据最后一条的ID 并且根据ID和分页条数读取继续加载的数据
+						if(data && data.length>1){
+							data = data.concat(response.data.data) 
+						}
+						this.$set('services', data)
 					}, function(response) {
 						alert('error');
 					});
