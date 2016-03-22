@@ -12,7 +12,7 @@ require(['../../script/app.js'], function() {
 		//应用vue-resource插件
 		Vue.use(require('vue-resource'));
 	
-		new Vue({
+		var vm = new Vue({
 			//需要绑定的dom节点
 			el : '#serviceList',
 			//初始数据
@@ -24,6 +24,12 @@ require(['../../script/app.js'], function() {
 				}, {
 					text : 'Build Something Awesome'
 				}]
+			},
+			transition : {
+				"fade":{
+					enterClass: 'fadeIn',
+					leaveClass: 'fadeOut'
+				}
 			},
 			methods :{
 				//刷新列表数据 ，采用vue-resource插件
@@ -45,7 +51,11 @@ require(['../../script/app.js'], function() {
 				}
 			}
 		})
-
+		//定义数据加载效果
+		Vue.transition('fade', {
+		  enterClass: 'fadeIn',
+		  leaveClass: 'fadeOut'
+		})
 		//      调用api的地方要放到下面
 		//		注意这里不能用domready！，会提示加载超时
 		//		估计是由于vue从中作梗，时间紧迫后续再考虑解决方案

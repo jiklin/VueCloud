@@ -8,13 +8,16 @@
         <link rel="stylesheet" type="text/css" href="../../css/aui/aui.css" />
         <!--页面自定义样式--> 
         <link rel="stylesheet" type="text/css" href="../../css/app/center.css" /> 
+        <!--引入animate.css动效库-->        
+        <link rel="stylesheet" type="text/css" href="../../css/animate/animate.min.css" /> 
         
     </head>
     <body>
         <div class="aui-card aui-noborder service-list">
             <ul class="aui-list-view" id="serviceList">
                 <!--v-for 通过vuejs的数据绑定遍历列表数据-->                
-                <li class="aui-list-view-cell aui-img" v-for="dt in services">
+                <!--为了应用过渡效果，需要在目标元素上使用 transition 特性-->
+                <li class="aui-list-view-cell aui-img animated" v-for="dt in services" transition="fade">
                     <img class="aui-img-object aui-pull-right" src="http://placehold.it/90x90">
                     <div class="aui-img-body">
                          <p class='aui-ellipsis-2'>
