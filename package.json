@@ -7,6 +7,7 @@
     "imagemin-pngquant": "^4.2.0"
   },
   "devDependencies": {
+    "animate.css": "^3.5.1",
     "font-awesome": "^4.5.0",
     "gulp": "^3.9.0",
     "gulp-cache": "^0.4.1",

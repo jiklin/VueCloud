@@ -25,9 +25,13 @@ gulp.task('copy',function(){
 	gulp.src(['node_modules/vue/dist/*.js'])
 			    .pipe(gulp.dest('script/lib/vue'));
 
-	//复制vue相关依赖
+	//复制vue-resource相关依赖
 	gulp.src(['node_modules/vue-resource/dist/*.js'])
 			    .pipe(gulp.dest('script/lib/vue-resource'));
+			    
+   //复制animate.css动效库
+	gulp.src(['node_modules/animate.css/*.min.css'])
+			    .pipe(gulp.dest('css/animate'));
 	    	    
 	//复制font-awesome相关依赖
 	gulp.src(['node_modules/font-awesome/css*/*.min.*',
